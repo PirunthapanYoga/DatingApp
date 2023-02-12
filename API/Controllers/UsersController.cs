@@ -16,7 +16,7 @@ namespace API.Controllers
             _context = context;
 
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUser()
         {
@@ -25,7 +25,7 @@ namespace API.Controllers
             return await users;
 
         }
-
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> Getuser(int id)
         {
